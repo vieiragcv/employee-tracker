@@ -74,7 +74,7 @@ const promptHomeMenu = () => {
       });
     }
     /*---------------------------------------------------------------
-    -                       OPTION 3 is Selected
+    -                       OPTION 3 is Selected -> how to reference an element on the same table?
     ---------------------------------------------------------------*/
     else if(answers.menu === 'View All Employees') { 
       const sql = `SELECT employee.*, jobrole.title AS job_title
