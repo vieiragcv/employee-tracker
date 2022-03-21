@@ -1,0 +1,17 @@
+
+  Table 1:
+*id INT 
+name VARCHAR(30)
+
+  Table 2:
+*id INT
+title VARCHAR(30)
+salary DECIMAL
+department_id INT (foreign key)
+
+  Table 3:
+*id INT
+first_name VARCHAR(30)
+last_name VARCHAR(30)
+role_id INT
+manager_id INT
