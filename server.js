@@ -57,7 +57,8 @@ const promptHomeMenu = () => {
     -                       OPTION 1 is Selected
     ---------------------------------------------------------------*/
     if (answers.menu === 'View All Departments') {
-      db.query(`SELECT * FROM department`, (err, rows) => {
+      const sql = `SELECT * FROM department`
+      db.query(sql, (err, rows) => {
         console.table(rows);
       });
     }
@@ -65,8 +66,10 @@ const promptHomeMenu = () => {
     -                       OPTION 2 is Selected
     ---------------------------------------------------------------*/
     else if(answers.menu === 'View All Roles') {
-
-      db.query(`SELECT * FROM jobrole`, (err, rows) => {
+      const sql = `SELECT jobrole.*, department.department_name AS department 
+                  FROM jobrole 
+                  LEFT JOIN department ON jobrole.department_id = department.id;`
+      db.query(sql, (err, rows) => {
         console.table(rows);
       });
     }
@@ -74,7 +77,10 @@ const promptHomeMenu = () => {
     -                       OPTION 3 is Selected
     ---------------------------------------------------------------*/
     else if(answers.menu === 'View All Employees') { 
-      db.query(`SELECT * FROM employee`, (err, rows) => {
+      const sql = `SELECT employee.*, jobrole.title AS job_title
+                  FROM employee
+                  LEFT JOIN jobrole ON employee.role_id = jobrole.id;`
+      db.query(sql, (err, rows) => {
         console.table(rows);
       });
     }
