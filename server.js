@@ -7,9 +7,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 /*---------------------------------------------------------------
-
 -                            CONNECT TO DB
-
 ---------------------------------------------------------------*/
 
 const db = mysql.createConnection(
@@ -22,7 +20,6 @@ const db = mysql.createConnection(
   console.log('Connected to the election database.')
 );
 
-
 /*---------------------------------------------------------------
 -                       Express middleware
 ---------------------------------------------------------------*/
@@ -31,9 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 /*---------------------------------------------------------------
-
 -                            PROMPTS
-
 ---------------------------------------------------------------*/
 
 const promptHomeMenu = () => {
@@ -65,6 +60,7 @@ const promptHomeMenu = () => {
     /*---------------------------------------------------------------
     -                       OPTION 2 is Selected
     ---------------------------------------------------------------*/
+
     else if(answers.menu === 'View All Roles') {
       const sql = `SELECT jobrole.*, department.department_name AS department 
                   FROM jobrole 
@@ -73,9 +69,10 @@ const promptHomeMenu = () => {
         console.table(rows);
       });
     }
-    /*---------------------------------------------------------------
-    -                       OPTION 3 is Selected -> how to reference an element on the same table?
-    ---------------------------------------------------------------*/
+    /*----------------------------------------------------------------------------
+    -  OPTION 3 is Selected -> how to reference an element on the same table?
+    ----------------------------------------------------------------------------*/
+
     else if(answers.menu === 'View All Employees') { 
       const sql = `SELECT employee.*, jobrole.title AS job_title
                   FROM employee

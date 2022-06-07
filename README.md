@@ -42,7 +42,7 @@ THEN I am presented with a formatted table showing
   employee data, including employee ids, first names, last names, job titles, departments, salaries, and 
   managers that the employees report to 
   
-    (MISSING LISTING MANAGERS NAME)
+    (OK - Potential Improvement: Show Manager's Name instead of ID)
 
 WHEN I choose to add a department
 THEN I am prompted to enter the 
