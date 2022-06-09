@@ -56,7 +56,7 @@ THEN I am prompted to enter the
   salary, and 
   department for the role and that role is added to the database
 
-(PENDING)
+(OK)
   
 WHEN I choose to add an employee
 THEN I am prompted to enter the employee’s 
@@ -65,7 +65,7 @@ THEN I am prompted to enter the employee’s
   role, and 
   manager, and that employee is added to the database
 
-(PENDING)
+(OK)
   
 WHEN I choose to update an employee role
 THEN I am prompted to select an 
