@@ -321,7 +321,6 @@ const promptUpdateEmployee = () => {
   /* console.log(employeeList); */
   });
 
-
   return inquirer.prompt([
     {
       type: 'list',
