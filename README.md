@@ -10,5 +10,10 @@ Node / js
 - Inquirer
 - Mysql2
 
+Data Tracked (tables):
+
+- department(id, title, salary)
+- jobrole (id, title, salary)
+- employee (first_name, last_name, role_id, manager_id)
 
 
